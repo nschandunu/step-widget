@@ -51,11 +51,8 @@ struct StepCounterWidgetEntryView : View {
 
     var body: some View {
         VStack {
-            Text("Time:")
-            Text(entry.date, style: .time)
+            Text("4,790")
 
-            Text("Favorite Emoji:")
-            Text(entry.configuration.favoriteEmoji)
         }
     }
 }
