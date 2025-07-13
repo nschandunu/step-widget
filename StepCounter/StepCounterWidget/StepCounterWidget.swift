@@ -41,6 +41,11 @@ struct SimpleEntry: TimelineEntry {
     let configuration: ConfigurationAppIntent
 }
 
+//UI
+//1.Layout
+//2.Design
+//3.Cleanup
+
 struct StepCounterWidgetEntryView : View {
     var entry: Provider.Entry
 
