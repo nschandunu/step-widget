@@ -52,6 +52,13 @@ struct StepCounterWidgetEntryView : View {
     var body: some View {
         VStack {
             Text("4,790")
+            Text("Steps")
+                Spacer()
+            HStack {
+                Image(systemName: "bolt.fill") //shoeprints.fill")
+                Text("176 days!")
+            }
+            Rectangle()
 
         }
     }
