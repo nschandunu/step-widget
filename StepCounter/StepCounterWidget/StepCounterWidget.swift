@@ -85,7 +85,7 @@ struct StepProgress: View {
                 HStack(spacing: 3){
                     ForEach(1...segmentPerRow, id:\.self) { segment in
                         let index = (row - 1) * segmentPerRow + segment
-                        let isFilled = index < progress
+                        let isFilled = index <= progress
                         
                         Rectangle()
                             .frame(maxHeight: 5)
