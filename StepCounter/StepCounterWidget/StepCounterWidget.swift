@@ -83,10 +83,13 @@ struct StepProgress: View {
         VStack(spacing: 3) {
             ForEach(1...rows, id: \.self) { row in
                 HStack(spacing: 3){
-                    ForEach(1...segmentPerRow, id:\.self) { _ in
+                    ForEach(1...segmentPerRow, id:\.self) { segment in
+                        let index = (row - 1) * segmentPerRow + segment
+                        let isFilled = index < progress
+                        
                         Rectangle()
                             .frame(maxHeight: 5)
-                            .foregroundStyle(.secondary)
+                            .foregroundStyle(isFilled ? .primary : .secondary)
                     }
                 }
             }
