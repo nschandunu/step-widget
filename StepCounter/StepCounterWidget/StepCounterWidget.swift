@@ -78,11 +78,12 @@ struct StepProgress: View {
     let progress: Int
     let rows: Int = 2
     let segmentPerRow: Int = 5
+    let spacing: CGFloat = 3
     
     var body: some View {
-        VStack(spacing: 3) {
+        VStack(spacing: spacing) {
             ForEach(1...rows, id: \.self) { row in
-                HStack(spacing: 3){
+                HStack(spacing: spacing){
                     ForEach(1...segmentPerRow, id:\.self) { segment in
                         let index = (row - 1) * segmentPerRow + segment
                         let isFilled = index <= progress
