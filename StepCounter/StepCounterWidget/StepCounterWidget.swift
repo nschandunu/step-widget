@@ -56,6 +56,8 @@ struct StepCounterWidgetEntryView : View {
             
             Text("Steps")
                 .font(.system(size: 20).monospaced())
+                .foregroundStyle(.secondary)
+            
             Spacer()
             HStack {
                 Image(systemName: "bolt.fill") //shoeprints.fill")
@@ -77,8 +79,10 @@ struct StepCounterWidgetEntryView : View {
                             .frame(maxHeight: 5)
                     }
                 }
+                .foregroundStyle(.secondary)
             }
         }
+        .foregroundStyle(.green)
     }
 }
 
@@ -88,7 +92,7 @@ struct StepCounterWidget: Widget {
     var body: some WidgetConfiguration {
         AppIntentConfiguration(kind: kind, intent: ConfigurationAppIntent.self, provider: Provider()) { entry in
             StepCounterWidgetEntryView(entry: entry)
-                .containerBackground(.fill.tertiary, for: .widget)
+                .containerBackground(.black, for: .widget)
         }
     }
 }
