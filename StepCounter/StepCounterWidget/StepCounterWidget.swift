@@ -50,17 +50,32 @@ struct StepCounterWidgetEntryView : View {
     var entry: Provider.Entry
 
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 2) {
             Text("4,790")
+                .font(.system(size: 24, weight: .bold).monospacedDigit())
+            
             Text("Steps")
-                Spacer()
+            Spacer()
             HStack {
                 Image(systemName: "bolt.fill") //shoeprints.fill")
                 Text("176 days!")
             }
-
-            Rectangle()
-
+            .padding(.bottom, 4)
+            
+            VStack(spacing: 3) {
+                HStack(spacing: 3){
+                    ForEach(1...5, id:\.self) { _ in
+                        Rectangle()
+                            .frame(maxHeight: 5)
+                    }
+                }
+                HStack(spacing: 3){
+                    ForEach(1...5, id:\.self) { _ in
+                        Rectangle()
+                            .frame(maxHeight: 5)
+                    }
+                }
+            }
         }
     }
 }
